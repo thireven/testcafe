@@ -113,7 +113,7 @@ async function runTests (argParser) {
         .browsers(browsers)
         .concurrency(concurrency)
         .filter(argParser.filter)
-        .screenshots(opts.screenshots, opts.screenshotsOnFails)
+        .screenshots(opts.screenshots, opts.screenshotsOnFails, opts.pattern)
         .startApp(opts.app, opts.appInitDelay);
 
     runner.once('done-bootstrapping', () => log.hideSpinner());

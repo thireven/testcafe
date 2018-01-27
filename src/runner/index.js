@@ -28,6 +28,7 @@ export default class Runner extends EventEmitter {
             externalProxyHost:      null,
             screenshotPath:         null,
             takeScreenshotsOnFails: false,
+            screenshotsPattern:     null,
             skipJsErrors:           false,
             quarantineMode:         false,
             debugMode:              false,
@@ -171,9 +172,10 @@ export default class Runner extends EventEmitter {
         return this;
     }
 
-    screenshots (path, takeOnFails = false) {
+    screenshots (path, takeOnFails = false, pattern) {
         this.opts.takeScreenshotsOnFails = takeOnFails;
         this.opts.screenshotPath         = path;
+        this.opts.screenshotsPattern     = pattern;
 
         return this;
     }
